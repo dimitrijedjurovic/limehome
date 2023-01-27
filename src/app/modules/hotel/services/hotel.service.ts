@@ -4,6 +4,7 @@ import {BehaviorSubject} from "rxjs";
 import {IHotel} from "../../../models/hotel.model";
 import {HotelBookingFormComponent} from "../components/hotel-booking-form/hotel-booking-form.component";
 import {MatDialog} from "@angular/material/dialog";
+import {environment} from "../../../../enviroments/enviroment";
 
 interface HotelResponse {
   items: IHotel[];
@@ -21,7 +22,7 @@ export class HotelService {
   }
 
   getHotels() {
-    return this.http.get<HotelResponse>(`http://localhost:3001/hotels`).subscribe((res: HotelResponse) => {
+    return this.http.get<HotelResponse>(`${environment.apiURL}/hotels`).subscribe((res: HotelResponse) => {
       this.hotels$.next(res.items);
       this.selectedHotel$.next(res.items[0]);
     });

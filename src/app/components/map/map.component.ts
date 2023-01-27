@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 import {IHotel} from "../../models/hotel.model";
 import {GoogleMap} from "@angular/google-maps";
 import {HotelService} from "../../modules/hotel/services/hotel.service";
+import {environment} from "../../../enviroments/enviroment";
 
 @Component({
   selector: 'app-map',
@@ -26,7 +27,7 @@ export class MapComponent implements OnInit {
     private hotelService: HotelService,
     private changeDetectorRef: ChangeDetectorRef,
   ) {
-    this.apiLoaded$ = httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=AIzaSyDmaB4Y91NdEVYTHWSE6-nJ6bJqJOPJlHk&callback=initMap`, 'callback')
+    this.apiLoaded$ = httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=${environment.apiURL}&callback=initMap`, 'callback')
       .pipe(
         map(() => true),
         catchError(() => of(false)),
