@@ -1,6 +1,8 @@
-<google-map *ngIf="(apiLoaded$ | async)" [center]="{ lat: 48.13598, lng: 11.58643 }" [zoom]="16" [height]="'100vh'" [width]="'auto'">
+<google-map #map *ngIf="(apiLoaded$ | async)" [center]="{ lat: 48.13598, lng: 11.58643 }" [zoom]="16" [height]="'100vh'" [width]="'auto'">
   <map-marker *ngFor="let hotel of hotels$.value"
+              (mapClick)="hotelClicked(hotel)"
               [position]="{lng: hotel.position.lng, lat: hotel.position.lat}"
+              [options]="{icon: hotel === selectedHotel ? '/assets/svg/home-icon-active.svg' : '/assets/svg/home-icon.svg'}"
   ></map-marker>
 </google-map>
 

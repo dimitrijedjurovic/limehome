@@ -13,12 +13,19 @@ interface HotelResponse {
 export class HotelService {
 
   hotels$: BehaviorSubject<IHotel[]> = new BehaviorSubject<IHotel[]>([]);
+
+  selectedHotel$: BehaviorSubject<IHotel | null> = new BehaviorSubject<IHotel | null>(null)
   constructor(private http: HttpClient) {
   }
 
   getHotels() {
     return this.http.get<HotelResponse>(`http://localhost:3001/hotels`).subscribe((res: HotelResponse) => {
       this.hotels$.next(res.items);
+      this.selectedHotel$.next(res.items[0]);
     });
+  }
+
+  selectHotel(hotel: IHotel) {
+    this.selectedHotel$.next(hotel);
   }
 }
