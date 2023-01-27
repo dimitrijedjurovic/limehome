@@ -7,6 +7,7 @@ import {MapComponent} from "./components/map/map.component";
 import {GoogleMapsModule} from "@angular/google-maps";
 import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
 import {HotelService} from "./services/hotel.service";
+import {SwiperModule} from "swiper/angular";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HotelService} from "./services/hotel.service";
     BrowserModule,
     GoogleMapsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    SwiperModule
   ],
   providers:[HotelService],
   bootstrap: [AppComponent]

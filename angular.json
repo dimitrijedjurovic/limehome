@@ -25,6 +25,8 @@
               "src/assets"
             ],
             "styles": [
+              "swiper/swiper.min.css",
+              "swiper/swiper-bundle.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -87,6 +89,8 @@
               "src/assets"
             ],
             "styles": [
+              "swiper/swiper.min.css",
+              "swiper/swiper-bundle.min.css",
               "src/styles.css"
             ],
             "scripts": []
