@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HotelService} from "./services/hotel.service";
+import {HotelService} from "./modules/services/hotel.service";
 
 @Component({
   selector: 'app-root',
