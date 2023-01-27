@@ -8,12 +8,14 @@ import {GoogleMapsModule} from "@angular/google-maps";
 import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
 import {HotelService} from "./services/hotel.service";
 import {SwiperModule} from "swiper/angular";
+import {HotelSwiperComponent} from "./components/hotel-swiper/hotel-swiper.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    MapComponent
+    MapComponent,
+    HotelSwiperComponent
   ],
   imports: [
     BrowserModule,
