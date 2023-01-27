@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {BehaviorSubject, Subject, takeUntil} from "rxjs";
-import {HotelService} from "../../services/hotel.service";
-import {IHotel} from "../../../models/hotel.model";
+import {HotelService} from "../../../services/hotel.service";
+import {IHotel} from "../../../../models/hotel.model";
 import {SwiperComponent} from "swiper/angular";
 
 @Component({
