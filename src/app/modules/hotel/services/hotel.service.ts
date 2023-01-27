@@ -29,6 +29,8 @@ export class HotelService {
   }
 
   selectHotel(hotel: IHotel) {
+    if (this.selectedHotel$.value === hotel) return
+
     this.selectedHotel$.next(hotel);
   }
 
