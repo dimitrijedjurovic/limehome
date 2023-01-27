@@ -1,0 +1,53 @@
+<div class="modal">
+  <div class="modal-header">
+    <h4>
+      <span>{{selectedHotel$.value?.title}}</span>
+    </h4>
+    <button type="button" [disabled]="isLoading" (click)="closeModal()" class="close-button">
+      Close
+    </button>
+  </div>
+  <form [formGroup]="hotelBookingForm" (ngSubmit)="onBookingSubmit()">
+    <div>
+      <div class="modal-input">
+        <label for="firstName">First Name</label>
+        <input
+          id="firstName"
+          [formControl]="hotelBookingForm.controls.firstName"
+          placeholder="Enter your name"
+          type="text"
+        />
+      </div>
+      <div class="modal-input">
+        <label for="lastName">Last Name</label>
+        <input
+          id="lastName"
+          [formControl]="hotelBookingForm.controls.lastName"
+          placeholder="Enter your last name"
+          type="text"
+        />
+      </div>
+      <div class="modal-input">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          [formControl]="hotelBookingForm.controls.email"
+          placeholder="Enter your email"
+          type="email"
+        />
+      </div>
+    </div>
+    <button
+      *ngIf="!isBookingComplete"
+      [ngClass]="isLoading ? 'btn-ring' : ''"
+      [disabled]="!hotelBookingForm.valid || isLoading"
+      type="submit"
+      class="submit-booking"
+    >
+      {{isLoading ? '' : 'Book now'}}
+    </button>
+    <div *ngIf="isBookingComplete" class="modal-notification modal-success">
+      Successfully booked!
+    </div>
+  </form>
+</div>

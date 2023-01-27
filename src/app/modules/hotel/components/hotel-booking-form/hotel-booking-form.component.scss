@@ -1,0 +1,111 @@
+@import "src/assets/scss/variables";
+
+.modal {
+  padding: 16px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  &-input {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    margin-bottom: 12px;
+
+    label {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      height: 36px;
+      padding: 0 8px;
+    }
+  }
+
+  .close-button {
+    background: $primaryColor;
+    border: 0;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  .submit-booking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primaryColor;
+    border: 0;
+    width: 100%;
+    height: 36px;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+
+  .close-button {
+    background: $primaryColor;
+    border: 0;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px;
+
+    &:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+
+  .modal-notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: green;
+    border: 0;
+    width: 100%;
+    height: 36px;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+}
+
+.btn-ring:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid;
+  border-color: #fff transparent #fff transparent;
+  animation: ring 1.2s linear infinite;
+}
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

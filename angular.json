@@ -27,7 +27,7 @@
             "styles": [
               "swiper/swiper.min.css",
               "swiper/swiper-bundle.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -91,7 +91,7 @@
             "styles": [
               "swiper/swiper.min.css",
               "swiper/swiper-bundle.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
