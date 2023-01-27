@@ -1,5 +1,6 @@
 <div class="hotel-slider-wrapper">
   <swiper
+    #swiper
     *ngIf="(hotels$ | async)?.length"
     class="hotel-slider"
     [centeredSlides]="true"
