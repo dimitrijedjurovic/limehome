@@ -4,8 +4,13 @@
   padding: 16px;
 
   &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
     h4 {
-      margin: 0 0 10px;
+      margin: 0;
     }
   }
 
@@ -50,6 +55,19 @@
     font-size: 14px;
     text-transform: uppercase;
     border-radius: 4px;
+  }
+}
+
+.close-button {
+  background: $primaryColor;
+  border: 0;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
   }
 }
 

@@ -1,8 +1,11 @@
 <div class="modal">
   <div class="modal-header">
     <h4>
-      <span>Hotel</span>
+      <span>{{selectedHotel$.value?.title}}</span>
     </h4>
+    <button type="button" (click)="closeModal()" class="close-button">
+      Close
+    </button>
   </div>
   <form>
     <div>
