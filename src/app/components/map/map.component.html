@@ -1,3 +1,6 @@
-<google-map *ngIf="(apiLoaded$ | async)" [height]="'100vh'" [width]="'auto'">
+<google-map *ngIf="(apiLoaded$ | async)" [center]="{ lat: 48.13598, lng: 11.58643 }" [zoom]="16" [height]="'100vh'" [width]="'auto'">
+  <map-marker *ngFor="let hotel of hotels$.value"
+              [position]="{lng: hotel.position.lng, lat: hotel.position.lat}"
+  ></map-marker>
 </google-map>
 
