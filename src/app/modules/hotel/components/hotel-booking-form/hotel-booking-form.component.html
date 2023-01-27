@@ -7,12 +7,13 @@
       Close
     </button>
   </div>
-  <form>
+  <form [formGroup]="hotelBookingForm" (ngSubmit)="onBookingSubmit()">
     <div>
       <div class="modal-input">
         <label for="firstName">First Name</label>
         <input
           id="firstName"
+          [formControl]="hotelBookingForm.controls.firstName"
           placeholder="Enter your name"
           type="text"
         />
@@ -21,6 +22,7 @@
         <label for="lastName">Last Name</label>
         <input
           id="lastName"
+          [formControl]="hotelBookingForm.controls.lastName"
           placeholder="Enter your last name"
           type="text"
         />
@@ -29,6 +31,7 @@
         <label for="email">Email</label>
         <input
           id="email"
+          [formControl]="hotelBookingForm.controls.email"
           placeholder="Enter your email"
           type="email"
         />

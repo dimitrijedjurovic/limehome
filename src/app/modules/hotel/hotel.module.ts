@@ -5,12 +5,14 @@ import {HotelSwiperComponent} from "./components/hotel-swiper/hotel-swiper.compo
 import {HotelCardComponent} from "./components/hotel-card/hotel-card.component";
 import {HotelBookingFormComponent} from "./components/hotel-booking-form/hotel-booking-form.component";
 import {MatDialogModule} from "@angular/material/dialog";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     SwiperModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HotelSwiperComponent,
