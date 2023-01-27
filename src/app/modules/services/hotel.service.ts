@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
-import {IHotel} from "../models/hotel.model";
+import {IHotel} from "../../models/hotel.model";
 
 interface HotelResponse {
   items: IHotel[];

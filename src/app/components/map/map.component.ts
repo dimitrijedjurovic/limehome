@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 import {BehaviorSubject, catchError, map, Observable, of} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {HotelService} from "../../services/hotel.service";
+import {HotelService} from "../../modules/services/hotel.service";
 import {IHotel} from "../../models/hotel.model";
 
 @Component({
