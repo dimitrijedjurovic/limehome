@@ -47,4 +47,8 @@ export class MapComponent implements OnInit {
         }
       });
   }
+
+  hotelClicked(hotel: IHotel) {
+    this.hotelService.selectHotel(hotel);
+  }
 }

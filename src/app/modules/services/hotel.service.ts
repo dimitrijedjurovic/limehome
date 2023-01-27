@@ -24,4 +24,8 @@ export class HotelService {
       this.selectedHotel$.next(res.items[0]);
     });
   }
+
+  selectHotel(hotel: IHotel) {
+    this.selectedHotel$.next(hotel);
+  }
 }
