@@ -39,11 +39,12 @@
     </div>
     <button
       *ngIf="!isBookingComplete"
+      [ngClass]="isLoading ? 'btn-ring' : ''"
       [disabled]="!hotelBookingForm.valid || isLoading"
       type="submit"
       class="submit-booking"
     >
-      {{isLoading ? 'Please wait' : 'Book now'}}
+      {{isLoading ? '' : 'Book now'}}
     </button>
     <div *ngIf="isBookingComplete" class="modal-notification modal-success">
       Successfully booked!
