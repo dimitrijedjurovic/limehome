@@ -39,6 +39,9 @@ export class HotelSwiperComponent implements OnInit {
     this.hotelService.selectHotelByIndex(index);
   }
 
+  hotelClicked(hotel: IHotel) {
+    this.hotelService.selectHotel(hotel)
+  }
 
   ngOnDestroy(): void {
     this.destroy$.next();

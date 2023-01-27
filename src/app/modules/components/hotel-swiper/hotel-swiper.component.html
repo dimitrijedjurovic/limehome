@@ -9,7 +9,7 @@
     (slideChange)="onSlideChange()"
   >
     <ng-template *ngFor="let hotel of hotels$ | async" swiperSlide>
-        <app-hotel-card [hotel]="hotel"></app-hotel-card>
+        <app-hotel-card (click)="hotelClicked(hotel)" [hotel]="hotel"></app-hotel-card>
     </ng-template>
   </swiper>
 </div>
