@@ -33,11 +33,11 @@ export class HotelSwiperComponent implements OnInit {
     const hotels = this.hotels$.value
     const index = hotels.indexOf(hotel)
 
-    this.swiper?.swiperRef.slideTo(index, 500)
+    this.swiper?.swiperRef.slideToLoop(index, 500)
   }
 
   onSlideChange() {
-    const index = this.swiper?.swiperRef.activeIndex
+    const index = this.swiper?.swiperRef.realIndex
     this.hotelService.selectHotelByIndex(index);
   }
 
