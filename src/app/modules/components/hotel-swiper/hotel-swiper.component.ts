@@ -34,6 +34,12 @@ export class HotelSwiperComponent implements OnInit {
     this.swiper?.swiperRef.slideTo(index, 500)
   }
 
+  onSlideChange() {
+    const index = this.swiper?.swiperRef.activeIndex
+    this.hotelService.selectHotelByIndex(index);
+  }
+
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();

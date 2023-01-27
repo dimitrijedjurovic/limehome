@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component, OnInit, ViewChild,
 } from '@angular/core';
 import {BehaviorSubject, catchError, map, Observable, of, Subject, takeUntil} from "rxjs";
@@ -23,6 +24,7 @@ export class MapComponent implements OnInit {
   constructor(
     private httpClient: HttpClient,
     private hotelService: HotelService,
+    private changeDetectorRef: ChangeDetectorRef,
   ) {
     this.apiLoaded$ = httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=AIzaSyDmaB4Y91NdEVYTHWSE6-nJ6bJqJOPJlHk&callback=initMap`, 'callback')
       .pipe(
@@ -45,6 +47,8 @@ export class MapComponent implements OnInit {
             lat: hotel.position.lat,
           })
         }
+
+        this.changeDetectorRef.detectChanges();
       });
   }
 

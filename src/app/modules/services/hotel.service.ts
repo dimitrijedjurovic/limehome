@@ -28,4 +28,8 @@ export class HotelService {
   selectHotel(hotel: IHotel) {
     this.selectedHotel$.next(hotel);
   }
+
+  selectHotelByIndex(index: number) {
+    this.selectHotel(this.hotels$.value[index]);
+  }
 }
