@@ -1,0 +1,55 @@
+@import "src/assets/scss/variables";
+
+.modal {
+  padding: 16px;
+
+  &-header {
+    h4 {
+      margin: 0 0 10px;
+    }
+  }
+
+  &-input {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    margin-bottom: 12px;
+
+    label {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      height: 36px;
+      padding: 0 8px;
+    }
+  }
+
+  .close-button {
+    background: $primaryColor;
+    border: 0;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  .submit-booking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primaryColor;
+    border: 0;
+    width: 100%;
+    height: 36px;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+  }
+}
+
