@@ -3,6 +3,7 @@ import {BehaviorSubject, Subject, takeUntil} from "rxjs";
 import {IHotel} from "../../../../models/hotel.model";
 import {SwiperComponent} from "swiper/angular";
 import {HotelService} from "../../services/hotel.service";
+import {swiperBreakpoints} from "../../../../../constants/swiper.constants";
 
 @Component({
   selector: 'app-hotel-swiper',
@@ -13,6 +14,7 @@ export class HotelSwiperComponent implements OnInit {
   @ViewChild('swiper', {static: false}) swiper: SwiperComponent;
   private destroy$: Subject<void> = new Subject();
   readonly hotels$: BehaviorSubject<IHotel[]> = this.hotelService.hotels$;
+  readonly breakpoints = swiperBreakpoints;
 
   constructor(private hotelService: HotelService) {
   }

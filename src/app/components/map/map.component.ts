@@ -27,7 +27,7 @@ export class MapComponent implements OnInit {
     private hotelService: HotelService,
     private changeDetectorRef: ChangeDetectorRef,
   ) {
-    this.apiLoaded$ = httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=${environment.apiURL}&callback=initMap`, 'callback')
+    this.apiLoaded$ = httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=${environment.googleApi}&callback=initMap`, 'callback')
       .pipe(
         map(() => true),
         catchError(() => of(false)),

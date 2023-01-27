@@ -3,6 +3,7 @@
     #swiper
     *ngIf="(hotels$ | async)?.length"
     class="hotel-slider"
+    [breakpoints]="breakpoints"
     [centeredSlides]="true"
     [slidesPerView]="1.2"
     [spaceBetween]="10"
