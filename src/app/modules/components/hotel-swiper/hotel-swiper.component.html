@@ -1,13 +1,15 @@
 <div class="hotel-slider-wrapper">
   <swiper
+    #swiper
     *ngIf="(hotels$ | async)?.length"
     class="hotel-slider"
     [centeredSlides]="true"
-    [slidesPerView]="1.1"
+    [slidesPerView]="1.2"
     [spaceBetween]="10"
+    (slideChange)="onSlideChange()"
   >
     <ng-template *ngFor="let hotel of hotels$ | async" swiperSlide>
-        <app-hotel-card [hotel]="hotel"></app-hotel-card>
+        <app-hotel-card (click)="hotelClicked(hotel)" [hotel]="hotel"></app-hotel-card>
     </ng-template>
   </swiper>
 </div>
