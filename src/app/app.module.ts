@@ -3,16 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {NavigationComponent} from "./components/navigation/navigation.component";
+import {MapComponent} from "./components/map/map.component";
+import {GoogleMapsModule} from "@angular/google-maps";
+import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    MapComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    GoogleMapsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
