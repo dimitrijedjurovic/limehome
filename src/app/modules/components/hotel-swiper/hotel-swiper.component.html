@@ -7,9 +7,7 @@
     [spaceBetween]="10"
   >
     <ng-template *ngFor="let hotel of hotels$ | async" swiperSlide>
-      <div>
-        {{hotel.title}}
-      </div>
+        <app-hotel-card [hotel]="hotel"></app-hotel-card>
     </ng-template>
   </swiper>
 </div>
