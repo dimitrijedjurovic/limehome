@@ -6,6 +6,7 @@ import {NavigationComponent} from "./components/navigation/navigation.component"
 import {MapComponent} from "./components/map/map.component";
 import {GoogleMapsModule} from "@angular/google-maps";
 import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
+import {HotelService} from "./services/hotel.service";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
     HttpClientModule,
     HttpClientJsonpModule
   ],
+  providers:[HotelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

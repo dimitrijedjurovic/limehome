@@ -12,7 +12,7 @@ import {HttpClient} from "@angular/common/http";
 export class MapComponent {
   apiLoaded$: Observable<boolean>
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
   ) {
     this.apiLoaded$ = httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=AIzaSyDmaB4Y91NdEVYTHWSE6-nJ6bJqJOPJlHk&callback=initMap`, 'callback')
       .pipe(
