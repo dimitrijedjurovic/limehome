@@ -3,7 +3,7 @@
     <h4>
       <span>{{selectedHotel$.value?.title}}</span>
     </h4>
-    <button type="button" (click)="closeModal()" class="close-button">
+    <button type="button" [disabled]="isLoading" (click)="closeModal()" class="close-button">
       Close
     </button>
   </div>
@@ -38,10 +38,15 @@
       </div>
     </div>
     <button
-      [disabled]="!hotelBookingForm.valid"
+      *ngIf="!isBookingComplete"
+      [disabled]="!hotelBookingForm.valid || isLoading"
+      type="submit"
       class="submit-booking"
     >
-      Book
+      {{isLoading ? 'Please wait' : 'Book now'}}
     </button>
+    <div *ngIf="isBookingComplete" class="modal-notification modal-success">
+      Successfully booked!
+    </div>
   </form>
 </div>

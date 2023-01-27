@@ -14,6 +14,8 @@ import {IBookForm} from "../../models/book-form.model";
 export class HotelBookingFormComponent implements OnInit{
   readonly selectedHotel$: BehaviorSubject<IHotel | null> = this.hotelService.selectedHotel$;
   hotelBookingForm: FormGroup<IBookForm>;
+  isBookingComplete: boolean = false;
+  isLoading: boolean = false;
 
   constructor(
     private hotelService: HotelService,
@@ -39,7 +41,15 @@ export class HotelBookingFormComponent implements OnInit{
     if (!this.hotelBookingForm.valid) {
       return;
     }
+    this.isLoading = true;
 
-    this.closeModal()
+    setTimeout(() => {
+      this.isBookingComplete = true;
+      this.isLoading = false;
+
+      setTimeout(() => {
+        this.closeModal()
+      }, 2000)
+    }, 2000);
   }
 }
