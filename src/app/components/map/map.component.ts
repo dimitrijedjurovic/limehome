@@ -4,9 +4,9 @@ import {
 } from '@angular/core';
 import {BehaviorSubject, catchError, map, Observable, of, Subject, takeUntil} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {HotelService} from "../../modules/services/hotel.service";
 import {IHotel} from "../../models/hotel.model";
 import {GoogleMap} from "@angular/google-maps";
+import {HotelService} from "../../modules/hotel/services/hotel.service";
 
 @Component({
   selector: 'app-map',

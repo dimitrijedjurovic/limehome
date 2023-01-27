@@ -5,8 +5,8 @@ import {NavigationComponent} from "./components/navigation/navigation.component"
 import {MapComponent} from "./components/map/map.component";
 import {GoogleMapsModule} from "@angular/google-maps";
 import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
-import {HotelService} from "./modules/services/hotel.service";
 import {HotelModule} from "./modules/hotel/hotel.module";
+import {HotelService} from "./modules/hotel/services/hotel.service";
 
 @NgModule({
   declarations: [

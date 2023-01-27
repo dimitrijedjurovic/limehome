@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
-import {IHotel} from "../../models/hotel.model";
+import {IHotel} from "../../../models/hotel.model";
+import {HotelBookingFormComponent} from "../components/hotel-booking-form/hotel-booking-form.component";
+import {MatDialog} from "@angular/material/dialog";
 
 interface HotelResponse {
   items: IHotel[];
@@ -15,7 +17,7 @@ export class HotelService {
   hotels$: BehaviorSubject<IHotel[]> = new BehaviorSubject<IHotel[]>([]);
 
   selectedHotel$: BehaviorSubject<IHotel | null> = new BehaviorSubject<IHotel | null>(null)
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private modal: MatDialog) {
   }
 
   getHotels() {
@@ -31,5 +33,13 @@ export class HotelService {
 
   selectHotelByIndex(index: number) {
     this.selectHotel(this.hotels$.value[index]);
+  }
+
+  bookHotel() {
+    this.modal.open(HotelBookingFormComponent, {
+      disableClose: true,
+      hasBackdrop: true,
+      width: '400px',
+    });
   }
 }

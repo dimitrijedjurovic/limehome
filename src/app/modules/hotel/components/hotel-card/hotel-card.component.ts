@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IHotel} from "../../../../models/hotel.model";
+import {HotelService} from "../../services/hotel.service";
 
 @Component({
   selector: 'app-hotel-card',
@@ -7,8 +8,12 @@ import {IHotel} from "../../../../models/hotel.model";
   styleUrls: ['./hotel-card.component.scss']
 })
 export class HotelCardComponent {
-
-  constructor() {
-  }
   @Input() hotel: IHotel;
+
+  constructor(private hotelService: HotelService) {
+  }
+
+  bookHotel() {
+    this.hotelService.bookHotel()
+  }
 }
